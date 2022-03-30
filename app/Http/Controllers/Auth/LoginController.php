@@ -50,3 +50,5 @@ if ( $user->isAdmin() ) {// do your magic here
         $this->middleware('guest')->except('logout');
     }
 }
+
+

@@ -32,3 +32,20 @@ class LikeController extends Controller
       return view('frontend.list', compact('posts'));
     }
 }
+
+
+
+
+// Example many to many relation..
+
+// product controller
+
+// public function category()
+// {
+//     return $this->belongsToMany(category::class);
+// }
+// Ctaegory Controller
+// public function product()
+// {
+//     return $this->belongsToMany(Product::class);
+// }
