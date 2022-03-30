@@ -16,10 +16,10 @@
                                 <fieldset>
 
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="name" name="name" type="name" autofocus>
+                                        <input class="form-control" placeholder="name" name="name" type="name" value="{{old('name')}}" autofocus>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                        <input class="form-control" placeholder="E-mail" name="email" type="email" value="{{old('email')}}" autofocus>
 
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                        <input class="form-control" placeholder="Password" name="password" type="password" value="{{old('password')}}">
                                              
                                         @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -39,7 +39,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="confirmPassword" name="password_confirmation" type="password" value="">
+                                        <input class="form-control" placeholder="confirmPassword" name="password_confirmation" type="password" value="value="{{old('password_confirmation')}}">
                                     </div>
 
                                     <!-- <div class="checkbox">

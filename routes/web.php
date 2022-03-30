@@ -6,6 +6,8 @@ use App\http\Controllers\PostController;
 use App\http\Controllers\ListController;
 use App\http\Controllers\LikeController;
 use App\http\Controllers\CommentController;
+use App\http\Controllers\ FrontController;
+;
 
 // use App\http\Controllers\AuthController;
 /*
@@ -18,10 +20,13 @@ use App\http\Controllers\CommentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('index',[FrontController::class,'index'])->name('index')->middleware('auth');
 
-Route::get('/', [ListController::class,'index'])->name('dashboard');
+Route::get('/', [ListController::class,'index'])->name('dashboard')->middleware('auth');
 
 // Route::get('admin/dashboard',[FrontendController::class,'index'])->name('admin.dashboard');
+Route::get('index',[FrontendController::class,'index'])->name('index');
+
 
 
  Route::get('login', function () {
@@ -80,6 +85,16 @@ Route::get('likes-views', function () {
 
 
 Route::post('comment-post',[CommentController::class,'store'])->name('comment.post')->middleware("auth");
+
+
+
+
+// FRONT ROUTE
+Route::get('index',[FrontController::class,'index'])->name('index');
+
+Route::get('comment', function () {
+    return view('front.comments');
+})->name('comment');
 
 
 

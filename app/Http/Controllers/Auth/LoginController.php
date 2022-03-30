@@ -27,11 +27,18 @@ class LoginController extends Controller
      * @var string
      */
     //protected $redirectTo = RouteServiceProvider::HOME;
-    protected function redirectTo()
-    {
-    
-        return '/dashboard';
-    }
+    // protected function redirectTo()
+    // {
+    //    return "/bbbbbbb";
+    // }
+    protected function authenticated(Request $request, $user)
+{
+if ( $user->isAdmin() ) {// do your magic here
+    return redirect()->route('/dashbord');
+}
+
+ return redirect('/home');
+}
 
     /**
      * Create a new controller instance.

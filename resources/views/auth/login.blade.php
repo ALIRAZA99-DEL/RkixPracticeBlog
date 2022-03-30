@@ -16,7 +16,7 @@
                                 @csrf
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                        <input class="form-control" placeholder="E-mail" name="email" type="email" value="{{old('email')}}" autofocus>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -25,7 +25,7 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                        <input class="form-control" placeholder="Password" name="password" type="password" value="{{old('password')}}">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
